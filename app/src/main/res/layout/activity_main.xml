@@ -10,9 +10,19 @@
         android:id="@+id/IdBtnAdicionarGastoMain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="121dp"
+        android:layout_marginStart="132dp"
         android:layout_marginBottom="136dp"
         android:text="Adicionar Gasto"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/IdBtnAdicionarSalarioMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="74dp"
+        android:text="Adicionar Salario"
+        app:layout_constraintBottom_toTopOf="@+id/IdBtnAdicionarGastoMain"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 </android.support.constraint.ConstraintLayout>
