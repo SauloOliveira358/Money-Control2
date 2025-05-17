@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdicionarGastos">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:layout_marginEnd="19dp"
+        android:text="Adicionar Gasto"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/IdEditTextNomeGasto"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/IdEditTextValorGasto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="33dp"
+        android:ems="10"
+        android:hint="Digite o valor R$: "
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        android:textColorHint="#030303"
+        app:layout_constraintStart_toStartOf="@+id/IdEditTextNomeGasto"
+        app:layout_constraintTop_toBottomOf="@+id/IdEditTextNomeGasto" />
+
+    <EditText
+        android:id="@+id/IdEditTextNomeGasto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:ems="10"
+        android:hint="Digite o nome"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="43dp"
+        android:text="Escolha o tipo do gasto"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/IdCheckBoxLazer"
+        app:layout_constraintTop_toBottomOf="@+id/IdEditTextValorGasto" />
+
+    <CheckBox
+        android:id="@+id/IdCheckBoxLazer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="45dp"
+        android:minHeight="48dp"
+        android:text="Lazer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <CheckBox
+        android:id="@+id/IdCheckBoxfixo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:text="FIXO"
+        app:layout_constraintStart_toStartOf="@+id/IdCheckBoxStreming"
+        app:layout_constraintTop_toBottomOf="@+id/IdCheckBoxStreming" />
+
+    <CheckBox
+        android:id="@+id/IdCheckBoxStreming"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:minHeight="48dp"
+        android:text="Streming"
+        app:layout_constraintStart_toStartOf="@+id/IdCheckBoxLazer"
+        app:layout_constraintTop_toBottomOf="@+id/IdCheckBoxLazer" />
+
+    <CheckBox
+        android:id="@+id/IdCheckBoxExcencial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:minHeight="48dp"
+        android:text="Excencial"
+        app:layout_constraintStart_toStartOf="@+id/IdCheckBoxAlimentação"
+        app:layout_constraintTop_toBottomOf="@+id/IdCheckBoxAlimentação" />
+
+    <CheckBox
+        android:id="@+id/IdCheckBoxAlimentação"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="42dp"
+        android:layout_marginBottom="2dp"
+        android:minHeight="48dp"
+        android:text="Alimentação"
+        app:layout_constraintBottom_toTopOf="@+id/IdCheckBoxStreming"
+        app:layout_constraintStart_toEndOf="@+id/IdCheckBoxStreming" />
+
+    <EditText
+        android:id="@+id/IdEditTextDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="25dp"
+        android:ems="10"
+        android:hint="Data"
+        android:inputType="date"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="@+id/IdCheckBoxfixo"
+        app:layout_constraintTop_toBottomOf="@+id/IdCheckBoxfixo" />
+
+    <Button
+        android:id="@+id/IdBtnSalvar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="56dp"
+        android:text="Salvar"
+        app:layout_constraintEnd_toEndOf="@+id/IdEditTextDate"
+        app:layout_constraintTop_toBottomOf="@+id/IdEditTextDate" />
+
+    <Button
+        android:id="@+id/IdBtnVoltarAdicionarGasto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:text="X"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent" />
+</android.support.constraint.ConstraintLayout>
