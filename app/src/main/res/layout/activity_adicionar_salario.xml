@@ -10,10 +10,110 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="58dp"
-        android:text="Adicionar Salario"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="33dp"
+        android:text="Adicionar salario ou renda extra"
         android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/IdBtnFechardcionarRenda"
+        app:layout_constraintTop_toBottomOf="@+id/IdBtnFechardcionarRenda" />
+
+    <EditText
+        android:id="@+id/IdEditTxtValorSalario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="39dp"
+        android:ems="10"
+        android:hint="Digite o valor R$:"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="@+id/IdEditTxtNomeRenda"
+        app:layout_constraintTop_toBottomOf="@+id/IdEditTxtNomeRenda" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="35dp"
+        android:text="Tipo de renda"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/IdCheckBoxSalarioFixo"
+        app:layout_constraintEnd_toStartOf="@+id/IdCheckBoxRendaExtra"
+        app:layout_constraintStart_toStartOf="@+id/IdCheckBoxRendaExtra" />
+
+    <CheckBox
+        android:id="@+id/IdCheckBoxSalarioFixo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginBottom="308dp"
+        android:minHeight="48dp"
+        android:text="Salario Fixo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <CheckBox
+        android:id="@+id/IdCheckBoxRendaExtra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:minHeight="48dp"
+        android:text="Renda Extra"
+        app:layout_constraintBaseline_toBaselineOf="@+id/IdCheckBoxSalarioFixo"
+        app:layout_constraintStart_toEndOf="@+id/IdCheckBoxSalarioVariavel" />
+
+    <EditText
+        android:id="@+id/IdEditTxtNomeRenda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="Nome :"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <EditText
+        android:id="@+id/IdEditTxtDateRenda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="29dp"
+        android:ems="10"
+        android:hint="Data:"
+        android:inputType="date"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/IdBtnSalvarRenda"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <CheckBox
+        android:id="@+id/IdCheckBoxSalarioVariavel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:minHeight="48dp"
+        android:text="SalarioVariavel"
+        app:layout_constraintStart_toStartOf="@+id/IdCheckBoxSalarioFixo"
+        app:layout_constraintTop_toBottomOf="@+id/IdCheckBoxSalarioFixo" />
+
+    <Button
+        android:id="@+id/IdBtnSalvarRenda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="79dp"
+        android:text="Salvar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/IdBtnFechardcionarRenda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:text="x"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>
