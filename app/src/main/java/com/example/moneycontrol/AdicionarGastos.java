@@ -9,16 +9,24 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import data.AppDatabase;
+import data.GastosDB;
+import data.GastosDao;
+
 public class AdicionarGastos extends AppCompatActivity {
     private EditText nome_Gasto, valor_gasto, data_gasto;
     private CheckBox lazer, streming, exencial, alimentacao, fixo_gasto;
     private Button salvar_Gasto, fechar_Gasto;
-
+    private String checkBoxTexto,valorstr;
+    private double valor_gastoDouble;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        System.out.println("antes");
+        System.out.println("depois");
         setContentView(R.layout.activity_adicionar_gastos);
         //editText
         nome_Gasto = findViewById(R.id.IdEditTextNomeGasto);
@@ -35,6 +43,26 @@ public class AdicionarGastos extends AppCompatActivity {
         salvar_Gasto = findViewById(R.id.IdBtnSalvar);
         fechar_Gasto = findViewById(R.id.IdBtnVoltarAdicionarGasto);
 
+        AppDatabase db = AppDatabase.getInstance(this);
+        GastosDao dao = db.gastosDao();
+
+
+        salvar_Gasto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                valorstr = valor_gasto.getText().toString().replace(",",".");
+                valor_gastoDouble = Double.parseDouble(valorstr);
+                GastosDB banco = new GastosDB(nome_Gasto.getText().toString(),data_gasto.getText().toString(),valor_gastoDouble,checkBoxTexto);
+
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        dao.inserirGasto(banco);
+                    }
+                }).start();
+                finish();
+            }
+        });
         //Fazer o botao X voltar pro main
         fechar_Gasto.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,11 +87,12 @@ public class AdicionarGastos extends AppCompatActivity {
                 fixo_gasto.setChecked(false);
 
                 clicou.setChecked(true);
-
+                checkBoxTexto = clicou.getText().toString();
             }
 
 
         };
+
 
         //fazer cada um escutar o click pra entrar no metodo pra dar false nos click la
         lazer.setOnClickListener(escuta);
@@ -72,5 +101,6 @@ public class AdicionarGastos extends AppCompatActivity {
         alimentacao.setOnClickListener(escuta);
         fixo_gasto.setOnClickListener(escuta);
     }
+
 }
 

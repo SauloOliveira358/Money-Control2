@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+
 public class AdicionarSalario extends AppCompatActivity {
 private EditText data_Renda,Valor_Renda,nome;
 private CheckBox salario_Fixo,renda_Extra,salario_variavel;
