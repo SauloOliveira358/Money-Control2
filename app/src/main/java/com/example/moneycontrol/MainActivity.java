@@ -74,6 +74,14 @@ for(GastosDB gasto : list){
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(),AdicionarSalario.class);
                 startActivity(intent);
+                //teste pra limpar o banco quando clicar em adicionar salario
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        gastosDao.limparTodos();
+                    }
+                }).start();
+                //final teste banco limpar
             }
         });
 
