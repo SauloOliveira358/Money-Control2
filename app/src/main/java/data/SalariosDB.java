@@ -21,6 +21,7 @@ public class SalariosDB {
         this.checkboxSalario = checkbox;
     }
 
+
     public int getId() {
         return id;
     }
@@ -29,28 +30,28 @@ public class SalariosDB {
         this.id = id;
     }
 
-    public String getNome() {
+    public String getNomeSalario() {
         return nomeSalario;
     }
 
-    public void setNome(String nome) {
-        this.nomeSalario = nome;
+    public void setNomeSalario(String nomeSalario) {
+        this.nomeSalario = nomeSalario;
     }
 
-    public String getData() {
+    public String getDataSalario() {
         return dataSalario;
     }
 
-    public void setData(String data) {
-        this.dataSalario = data;
+    public void setDataSalario(String dataSalario) {
+        this.dataSalario = dataSalario;
     }
 
-    public String getCheckbox() {
+    public String getCheckboxSalario() {
         return checkboxSalario;
     }
 
-    public void setCheckbox(String checkbox) {
-        this.checkboxSalario = checkbox;
+    public void setCheckboxSalario(String checkboxSalario) {
+        this.checkboxSalario = checkboxSalario;
     }
 
     public double getSalario() {

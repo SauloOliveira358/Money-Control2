@@ -11,8 +11,8 @@ public interface SalarioDao {
     @Query("DELETE FROM salario")
     void limparTodosSalarios();
     @Insert
-    void inserirSalario(GastosDB salario);
+    void inserirSalario(SalariosDB salario);
 
     @Query("SELECT * FROM salario")
-    List<GastosDB> listarTodosSalario();
+    List<SalariosDB> listarTodosSalario();
 }
